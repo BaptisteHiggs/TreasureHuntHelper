@@ -1,0 +1,26 @@
+body {
+    background-color: #047f9e;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 5vh;
+}
+
+p {
+    color: white;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 3vh;
+}
+
+button {
+    border-radius: 5px;
+    font-family: 'Quicksand', sans-serif;
+    padding: 6px 18px;
+    background-color: white;
+    color: black;
+}
