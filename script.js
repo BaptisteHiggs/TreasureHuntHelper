@@ -14,8 +14,6 @@ function showPosition(position) {
   var lon = position.coords.longitude;
   var latlon = new google.maps.LatLng(lat, lon);
   var mapholder = document.getElementById("map");
-  mapholder.style.height = "250px";
-  mapholder.style.width = "100%";
 
   var myOptions = {
     center: latlon,

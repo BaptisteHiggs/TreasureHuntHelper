@@ -18,9 +18,15 @@ p {
 }
 
 button {
-    border-radius: 5px;
+    border-radius: 3vmin;
+    font-size: 5vmin;
     font-family: 'Quicksand', sans-serif;
-    padding: 6px 18px;
+    padding: 2vmin 3vmin;
     background-color: white;
     color: black;
+}
+
+#map {
+    height: 50vmax;
+    width: 100%;
 }
