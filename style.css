@@ -30,3 +30,7 @@ button {
     height: 50vmax;
     width: 100%;
 }
+
+#photo {
+    width: 80%;
+}

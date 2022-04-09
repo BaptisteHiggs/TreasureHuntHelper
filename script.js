@@ -1,10 +1,10 @@
 var positionDicts = [
-  { picName: "placeholder.jpg", lat: -33.812193, lon: 151.153654, radius: 300 }, // tennis
-  { picName: "placeholder.jpg", lat: -33.829497, lon: 151.181660, radius: 300 }, // gore creek rock
-  { picName: "placeholder.jpg", lat: -33.849445, lon: 151.053984, radius: 2000 }, // olympic park hill rd entry
-  { picName: "placeholder.jpg", lat: -33.789743, lon: 150.867243, radius: 1000 }, // zoo
-  { picName: "placeholder.jpg", lat: -33.706978, lon: 150.698535, radius: 300 }, // Cranebrook
-  { picName: "placeholder.jpg", lat: -33.781500, lon: 150.620980, radius: 300 } // Jelly bean
+  { picName: "tennis.jpg", lat: -33.812193, lon: 151.153654, radius: 300 }, // tennis
+  { picName: "goreCreekRock.jpg", lat: -33.829497, lon: 151.181660, radius: 300 }, // gore creek rock
+  { picName: "olympicPark.jpg", lat: -33.849445, lon: 151.053984, radius: 2000 }, // olympic park hill rd entry
+  { picName: "zoo.jpg", lat: -33.789743, lon: 150.867243, radius: 1000 }, // zoo
+  { picName: "cranebrook.jpg", lat: -33.706978, lon: 150.698535, radius: 1000 }, // Cranebrook
+  { picName: "jellyBeanPool.jpg", lat: -33.781500, lon: 150.620980, radius: 1000 } // Jelly bean
 ];
 
 var x = document.getElementById("map");
@@ -19,6 +19,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
+
   var lat = position.coords.latitude;
   var lon = position.coords.longitude;
   var latlon = new google.maps.LatLng(lat, lon);
@@ -46,13 +47,18 @@ function showPosition(position) {
   });
   
 
-  // DEBUG
+  /* DEBUG
   debugString = "";
   positionDicts.forEach(element => {
     dist = haversine_distance(lat, lon, element.lat, element.lon);
     debugString += "\n > " + dist;
+    var tmp = new google.maps.Marker({
+      position: new google.maps.LatLng(element.lat, element.lon),
+      map: map,
+      title: "dest",
+    });
   });
-  document.getElementById("debug").innerText = debugString;
+  document.getElementById("debug").innerText = debugString;*/
 
 
   //
@@ -63,9 +69,11 @@ function showPosition(position) {
       title: "dest",
     });
     // Add the photo
-    document.getElementById("map").src = "placeholder.jpg"
+    document.getElementById("photo").src = "pics/" + closestPos.picName;
+  } else {
+    // Remove the photo
+    document.getElementById("photo").src = "";
   }
-  document.getElementById("map").src = "placeholder.jpg"
 
   var current = new google.maps.Marker({
     position: latlon,
